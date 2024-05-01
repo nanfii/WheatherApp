@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Stay ahead of the weather with this simple weather app. With just a few taps, you can easily access detailed forecasts for cities around the world, giving you the confidence to plan your day with ease."
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="website icon" type="png" href="assets/icons/sunrise.png" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Weather Dashboard</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Weather</h1>
+      <p class="today-date"></p>
+    </header>
+    <section class="container">
+      <form id="search-form" class="form text-center">
+        <input
+          class="weather-search text-center"
+          type="text"
+          id="search-input"
+          placeholder="Search for a city"
+          aria-labelledby="form-heading"
+          aria-controls="today forecast"
+        />
+        <button type="submit" class="search-button" id="search-button" aria-label="submit search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+      <p class="no-search-text text-center">No recent search history</p>
+      <ul>
+        <!-- Search History -->
+      </ul>
+    </section>
+
+    <section id="today" class="today" role="region" aria-live="polite">
+      <!-- Current day forecast -->
+    </section>
+
+    <section id="forecast" class="forecast" role="region" aria-live="polite">
+      <!-- 5 Day forecast -->
+    </section>
+
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- App -->
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

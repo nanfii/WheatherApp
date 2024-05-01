@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+
+/* || VARIABLES */
+:root {
+  --primary: #005893;
+  --secondary: #55a7de;
+  --white: #fff;
+  --dark-primary: #0e1a45;
+  --dark-secondary: #31255a;
+}
+
+/* || RESETS */
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
+  color: var(--white);
+  background-image: linear-gradient(var(--primary), var(--secondary));
+  min-height: 100vh;
+}
+
+a {
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
+
+/* || GLOBAL STYLES */
+
+.text-center {
+  text-align: center;
+}
+
+/* || MOBILE STYLES */
+
+/* Search */
+header {
+  background-color: var(--white);
+  color: var(--primary);
+  padding: 2% 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 1.3rem;
+}
+
+.container {
+  background-color: var(--white);
+  border-radius: 0 0 20px 20px;
+  border-bottom: 1px solid var(--primary);
+}
+
+.form {
+  margin: 0% 5%;
+  display: flex;
+  align-items: center;
+}
+
+.weather-search {
+  background-color: transparent;
+  border-radius: 7px;
+  padding: 2% 15%;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  flex: 1;
+  margin: 0 1%;
+}
+
+.weather-search::placeholder {
+  color: var(--primary);
+}
+
+.weather-search:focus {
+  outline: var(--primary) 1px solid;
+}
+
+.search-button {
+  color: var(--primary);
+  background: none;
+  border-style: none;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.search-button:hover {
+  color: var(--secondary);
+  cursor: pointer;
+  scale: 1.1;
+  transition: 0.2s ease-in-out;
+}
+
+ul {
+  padding: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  margin: 0 0 3% 3%;
+  position: relative;
+  text-decoration: none;
+}
+
+a:first-child {
+  margin-left: 0;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease-out;
+}
+
+a:hover::before {
+  transform: scaleX(1);
+}
+
+.saved-city {
+  font-size: 0.9rem;
+  color: var(--primary);
+}
+
+.no-search-text {
+  font-weight: 100;
+
+  padding-top: 5%;
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+/* Today */
+
+.icon-wrapper {
+  font-size: 0.7rem;
+  padding: 10% 5%;
+  border-radius: 10px;
+  margin: 5% 5%;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px;
+}
+
+.today-temp {
+  font-size: 5rem;
+  margin: 0px;
+}
+
+.icon {
+  scale: 0.5;
+}
+
+.today-weather-desc {
+  font-size: 1.5rem;
+}
+
+.high-low-wrapper {
+  font-size: 1rem;
+}
+
+.details-wrapper {
+  display: none;
+}
+
+/* Forecast */
+.forecast {
+  margin: 5%;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 3% 1%;
+  border-radius: 10px;
+  display: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px;
+}
+
+.forecast-day-wrap {
+  display: flex;
+  align-items: center;
+  margin: 5% 0;
+  height: 2.5vh;
+}
+
+.forecast-day-wrap > * {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.forecast-icon {
+  scale: 0.2;
+  width: 1rem;
+}
+
+.forecast-day {
+  margin-left: 2%;
+}
+
+.forecast-temp {
+  margin-right: 2%;
+}
+
+hr {
+  width: 90%;
+  margin-top: 5%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+hr:last-child {
+  display: none;
+}
+
+.forecast-wind,
+.forecast-humid,
+.forecast-icon-wind,
+.forecast-icon-humid {
+  display: none;
+}
+
+/* || SMALL TABLET STYLES */
+@media screen and (min-width: 800px) {
+  /* Search */
+  a.day-saved-city {
+    padding: 1% 3%;
+  }
+
+  .saved-city {
+    font-size: 1rem;
+  }
+
+  /* Today */
+
+  .details-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 5%;
+    padding: 2%;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px;
+  }
+
+  .details-wrapper .icon {
+    scale: 0.4;
+  }
+
+  .feels-like {
+    font-size: 4rem;
+  }
+
+  .feels-like-text {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  /* Forecast */
+  .forecast-day,
+  .forecast-temp {
+    font-size: 1.2rem;
+  }
+}
+
+/* || LARGE TABLETS AND LAPTOP STYLES */
+@media screen and (min-width: 960px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .forecast-wind,
+  .forecast-humid {
+    display: flex;
+  }
+}
+
+/* || DESKTOP STYLES */
+@media screen and (min-width: 1200px) {
+  header h1 {
+    font-size: 2.8rem;
+  }
+}
